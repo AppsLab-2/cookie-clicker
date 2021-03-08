@@ -1,5 +1,6 @@
-html, body { height: 100%; margin: 0; padding: 0;  }
+html, body { height: 100%; margin: 0; padding: 0; font-family: Timmana;  }
 
 body { 
     background: radial-gradient(50% 50% at 50% 50%, rgba(206, 0, 210, 0.57) 0%, rgba(255, 255, 255, 0) 76.04%), linear-gradient(180deg, #4600B9 0%, #CC00FF 100%);
+    position: relative;
 }
