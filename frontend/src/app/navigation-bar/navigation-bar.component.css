@@ -11,14 +11,23 @@ nav {
     clip-path: polygon(0 0, 100% 0%, 94% 100%, 0% 100%);
 }
 
-p {
+a {
     font-size: 28px;
     color: #FFFFFF;
     text-align: center;
     height: 31px;
     margin-left: 100px;
-
+    text-decoration: none;
 }
+
+p{
+    font-size: 28px;
+    color: #FFFFFF;
+    text-align: center;
+    height: 31px;
+    margin-left: 100px;
+}
+
 .kripix {
     width: 121.24px;
     height: 38.02px;
@@ -29,6 +38,8 @@ span {
     color: #FFFFFF;
     font-size: 28px;
     height: 32px;
+    width: 100px;
+    margin-right: 80px;
 }
 
 img {

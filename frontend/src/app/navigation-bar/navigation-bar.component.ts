@@ -1,3 +1,5 @@
+import { BehaviorSubject } from 'rxjs';
+import { MoneyService } from './../money.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationBarComponent implements OnInit {
 
-  constructor() { }
+  money: number;
+
+  constructor(private moneyService: MoneyService) {}
 
   ngOnInit(): void {
+    this.moneyService.money.subscribe(money => this.money = money)
   }
 
 }
