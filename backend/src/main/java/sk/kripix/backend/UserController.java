@@ -5,14 +5,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
-    private UserService x;
+    private UserService userService;
 
-    public UserController(UserService x){
-        this.x = x;
+    public UserController(UserService userService){
+        this.userService = userService;
     }
 
     @PostMapping("/login")
     public void save(@RequestBody User user){
-        x.saveUser(user);
+        userService.saveUser(user);
     }
 }
