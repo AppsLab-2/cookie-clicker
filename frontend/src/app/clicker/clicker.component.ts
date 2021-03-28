@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { MoneyService } from '../money.service';
+import { MoneyService } from '../service/money.service';
 
 @Component({
   selector: 'app-clicker',
@@ -10,9 +10,8 @@ import { MoneyService } from '../money.service';
 export class ClickerComponent {
 
   onClick(){
-    this.moneyService.updateMoney(this.moneyService.money.value + 1);
+    this.moneyService.click();
   }
-
 
   constructor(private moneyService: MoneyService) {}
 

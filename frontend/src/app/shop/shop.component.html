@@ -1,1 +1,9 @@
-
+<div class="wrapper">
+    <div class="card">
+        <p class="header">Clicker Upgrades</p>
+        <div class="upgrade" (click)="buyUpgrade()">
+            <p>{{upgrade.value | currency}} per click</p>
+            <p class="price">{{upgrade.price | currency}}</p>
+        </div>
+    </div>
+</div>
