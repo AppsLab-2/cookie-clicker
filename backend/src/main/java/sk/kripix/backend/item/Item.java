@@ -13,10 +13,12 @@ public class Item {
     String name;
     int price;
 
-    public Item(Long id, String name, int price) {
+
+    public Item(Long id, String name, int price, int value) {
         this.id = id;
         this.name = name;
         this.price = price;
+
     }
 
     public Long getId() {
@@ -42,4 +44,5 @@ public class Item {
     public void setPrice(int price) {
         this.price = price;
     }
+
 }
