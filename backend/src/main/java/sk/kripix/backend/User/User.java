@@ -1,4 +1,4 @@
-package sk.kripix.backend;
+package sk.kripix.backend.User;
 import org.hibernate.tool.schema.internal.exec.GenerationTarget;
 
 import javax.persistence.Entity;
