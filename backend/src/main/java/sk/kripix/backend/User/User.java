@@ -1,5 +1,4 @@
 package sk.kripix.backend.User;
-import org.hibernate.tool.schema.internal.exec.GenerationTarget;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,58 +6,38 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class
-User {
+public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String username;
+    private String password;
+    private long score;
 
-    String name;
-    String surname;
-    String email;
-    String password;
-    Long money;
-
-
-    public User(String name, String surname, String email, String password, Long money) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.password = password;
-        this.money = money;
+    public User() {
     }
 
-    public int getId() {
+    public User(String username, String password, long score) {
+        this.username = username;
+        this.password = password;
+        this.score = score;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -68,4 +47,13 @@ User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public long getScore() {
+        return score;
+    }
+
+    public void setScore(long score) {
+        this.score = score;
+    }
+
 }

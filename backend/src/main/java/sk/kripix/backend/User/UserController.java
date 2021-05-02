@@ -1,4 +1,5 @@
 package sk.kripix.backend.User;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,5 +15,10 @@ public class UserController {
     @PostMapping("/login")
     public void save(@RequestBody User user){
         userService.saveUser(user);
+    }
+
+    @GetMapping("/user")
+    public void getUser() {
+
     }
 }
