@@ -1,13 +1,15 @@
-import { LoginComponent } from './login/login.component';
-import { ClickerComponent } from './clicker/clicker.component';
+import { AuthGuard } from './guard/auth.guard';
+import { LoginComponent } from './component/login/login.component';
+import { ClickerComponent } from './component/clicker/clicker.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ShopComponent } from './shop/shop.component';
+import { ShopComponent } from './component/shop/shop.component';
 
 const routes: Routes = [
-  {path: '', component: ClickerComponent},
-  {path: 'shop', component: ShopComponent},
+  {path: 'clicker', component: ClickerComponent, canActivate: [AuthGuard] },
+  {path: 'shop', component: ShopComponent, canActivate: [AuthGuard] },
   {path: 'login', component: LoginComponent},
+  {path: '**', redirectTo: '/clicker'}
 ];
 
 @NgModule({

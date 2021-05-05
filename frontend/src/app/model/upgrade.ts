@@ -1,6 +1,6 @@
 export interface Upgrade  {
-    id: number;
+    id: number,
     name: string;
     price: number;
-    value: number;
+    priceIncrement: number;
 }

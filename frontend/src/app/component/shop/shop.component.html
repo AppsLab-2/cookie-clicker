@@ -1,0 +1,7 @@
+<div class="wrapper">
+    <h2 class="header">Clicker Upgrades</h2>
+    <div class="upgrade" *ngFor="let upgrade of upgrades$ | async" (click)="buyUpgrade(upgrade)">
+        <h3>{{ upgrade.name }}</h3>
+        <h3>{{ upgrade.price | currency : 'USD' : 'symbol' : '1.0-0'}}</h3>
+    </div>
+</div>

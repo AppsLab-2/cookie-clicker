@@ -120,5 +120,11 @@
         }
       }
     }},
-  "defaultProject": "Openlab"
+    
+  "defaultProject": "Openlab",
+  "schematics": {
+    "@schematics/angular:component": {
+      "skipTests": true
+    }
+  }
 }

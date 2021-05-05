@@ -1,5 +1,5 @@
 import { BehaviorSubject } from 'rxjs';
-import { MoneyService } from '../service/money.service';
+import { MoneyService } from '../../service/money.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
