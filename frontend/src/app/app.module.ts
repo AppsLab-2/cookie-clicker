@@ -10,6 +10,7 @@ import { ClickerComponent } from './component/clicker/clicker.component';
 import { NavigationBarComponent } from './component/navigation-bar/navigation-bar.component';
 import { ShopComponent } from './component/shop/shop.component';
 import { LoginComponent } from './component/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginComponent } from './component/login/login.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
