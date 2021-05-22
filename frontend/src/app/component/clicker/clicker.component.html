@@ -1,6 +1,6 @@
-<section class="frame">
-    <div class="clicker">
-        <div >5</div>
-        <button (click)="onClick()" class="button-click">CLICK</button>
-    </div>
-</section>
+<div *ngFor="let one of elements; let i = index" [@fadeIn] (@fadeIn.done)="destroy(i)">
+    {{clickValue}} $
+</div>
+<div class="clicker" id="button">
+    <button (click)="onClick()" class="button-click">CLICK</button>
+</div>

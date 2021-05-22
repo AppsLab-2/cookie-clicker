@@ -25,7 +25,7 @@ export class AuthService {
       }),
       withCredentials: true
     }
-    return this.httpClient.get(`${environment.api}/user`, options).pipe(
+    return this.httpClient.get(`${environment.api}/login`, options).pipe(
       tap(() => this.token = token)
     );
   }
