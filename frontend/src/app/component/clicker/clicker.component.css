@@ -10,6 +10,7 @@
 }
 
 .button-click{
+    position: relative;
     width: 316px;
     height: 107px;
     border-radius: 15px 50px;
@@ -22,9 +23,8 @@
     outline: none;
     border: none;
 }
-div {
+.increase {
     position: absolute;
-    left: 540px;
-    top: 350px;
     color: green;
+    left: 50%;
 }

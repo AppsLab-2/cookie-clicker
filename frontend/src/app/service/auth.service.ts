@@ -1,3 +1,4 @@
+import { RegisterDto } from './../model/registerDto';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
@@ -28,6 +29,10 @@ export class AuthService {
     return this.httpClient.get(`${environment.api}/login`, options).pipe(
       tap(() => this.token = token)
     );
+  }
+
+  register(registerDto: RegisterDto) {
+    return this.httpClient.post(`${environment.api}/register`, registerDto);
   }
 
   logout(): void {

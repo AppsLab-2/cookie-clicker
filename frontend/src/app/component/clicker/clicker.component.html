@@ -1,6 +1,6 @@
-<div *ngFor="let one of elements; let i = index" [@fadeIn] (@fadeIn.done)="destroy(i)">
-    {{clickValue}} $
-</div>
 <div class="clicker" id="button">
+    <div class="increase" *ngFor="let one of elements; let i = index" [@fadeIn] (@fadeIn.done)="destroy(i)">
+       {{ clickValue }} $
+    </div>
     <button (click)="onClick()" class="button-click">CLICK</button>
 </div>

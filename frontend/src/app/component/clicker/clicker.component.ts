@@ -27,7 +27,10 @@ export class ClickerComponent {
   constructor(private moneyService: MoneyService) {}
 
   ngOnInit(): void {
-    this.moneyService.clickValue.subscribe(value => this.clickValue = value)
+    this.moneyService.clickValue.subscribe(value => this.clickValue = value);
+    if(this.moneyService.isBonusActive.value) {
+      this.animate();
+    }
   }
   destroy(index): void {
       this.elements.shift();
@@ -51,15 +54,16 @@ export class ClickerComponent {
   async animate(): Promise<void> {
     const interval = setInterval(() => {
       this.animation();
-    }, 800);
-    await new Promise(resolve => setTimeout(resolve, 20000));
+    }, 1600);
+    await new Promise(resolve => setTimeout(resolve, 30000));
+    this.moneyService.isBonusActive.next(false);
     clearInterval(interval);
     this.moveButtonToStart();
   }
 
   moveButtonToStart(): void {
     const element = document.getElementById('button');
-    element.animate({top: '50%', left: '50%'}, {duration: 1000, fill: 'forwards'});
+    element.animate({top: '50%', left: '50%'}, {duration: 1500, fill: 'forwards'});
   }
 
   animation(): void {

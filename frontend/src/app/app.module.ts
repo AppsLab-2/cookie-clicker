@@ -11,6 +11,7 @@ import { NavigationBarComponent } from './component/navigation-bar/navigation-ba
 import { ShopComponent } from './component/shop/shop.component';
 import { LoginComponent } from './component/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterComponent } from './component/register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ClickerComponent,
     NavigationBarComponent,
     ShopComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

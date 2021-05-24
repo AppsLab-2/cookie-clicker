@@ -1,3 +1,4 @@
+import { RegisterComponent } from './component/register/register.component';
 import { AuthGuard } from './guard/auth.guard';
 import { LoginComponent } from './component/login/login.component';
 import { ClickerComponent } from './component/clicker/clicker.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   {path: 'clicker', component: ClickerComponent, canActivate: [AuthGuard] },
   {path: 'shop', component: ShopComponent, canActivate: [AuthGuard] },
   {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: '**', redirectTo: '/clicker'}
 ];
 
