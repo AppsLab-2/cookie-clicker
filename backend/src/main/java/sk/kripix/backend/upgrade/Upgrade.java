@@ -9,16 +9,16 @@ import javax.persistence.Id;
 public class Upgrade {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    long id;
     String name;
-    int price;
-    int value;
+    long price;
+    long priceIncrement;
 
-    public Upgrade(Long id, String name, int price, int value) {
+    public Upgrade(Long id, String name, int price, int priceIncrement) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.value = value;
+        this.priceIncrement = priceIncrement;
     }
     public Long getId() {
         return id;
@@ -36,19 +36,19 @@ public class Upgrade {
         this.name = name;
     }
 
-    public int getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
-    public int getValue() {
-        return value;
+    public long getPriceIncrement() {
+        return priceIncrement;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setPriceIncrement(long priceIncrement) {
+        this.priceIncrement = priceIncrement;
     }
 }

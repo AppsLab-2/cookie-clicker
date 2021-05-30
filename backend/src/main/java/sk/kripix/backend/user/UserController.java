@@ -1,4 +1,4 @@
-package sk.kripix.backend.User;
+package sk.kripix.backend.user;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +11,7 @@ import sk.kripix.backend.dto.RegisterDto;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
 
 @RestController
 public class UserController {
@@ -20,6 +21,16 @@ public class UserController {
     public UserController(UserService userService, PasswordEncoder passwordEncoder){
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
+    }
+
+    @PostMapping()
+    public void updateUser(@RequestBody User user) {
+        this.userService.updateUser(user);
+    }
+
+    @GetMapping("user/top")
+    public Collection<User> getTopUsers() {
+        return this.userService.getTopPlayers();
     }
 
     @PostMapping("/register")
@@ -34,7 +45,7 @@ public class UserController {
         User user = new User();
         user.setUsername(username);
         user.setPassword(encodedPassword);
-        user.setScore(0);
+        user.setMoney(0);
         userService.saveUser(user);
 
         return ResponseEntity.ok().build();

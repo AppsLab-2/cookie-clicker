@@ -1,10 +1,10 @@
-package sk.kripix.backend.User;
+package sk.kripix.backend.user;
 import org.springframework.stereotype.Service;
-import sk.kripix.backend.User.User;
-import sk.kripix.backend.User.UserRepository;
-import sk.kripix.backend.User.UserService;
 
+import java.util.Collection;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -38,5 +38,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean existsByUsername(String username) {
         return userRepository.existsByUsername(username);
+    }
+
+    @Override
+    public Collection<User> getTopPlayers() {
+        Iterable<User> topUsers = this.userRepository.findTop10ByOrderByMoneyEarnedDesc();
+        return StreamSupport
+                .stream(topUsers.spliterator(), false)
+                .collect(Collectors.toSet());
     }
 }

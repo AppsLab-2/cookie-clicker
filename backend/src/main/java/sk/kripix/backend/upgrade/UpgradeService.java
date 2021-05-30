@@ -1,5 +1,7 @@
 package sk.kripix.backend.upgrade;
 
+import java.util.Collection;
+
 public interface UpgradeService {
-    void getAllUpgrades();
+    Collection<Upgrade> getAllUpgrades();
 }

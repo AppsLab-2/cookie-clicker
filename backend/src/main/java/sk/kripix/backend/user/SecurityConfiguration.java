@@ -1,4 +1,4 @@
-package sk.kripix.backend.User;
+package sk.kripix.backend.user;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;

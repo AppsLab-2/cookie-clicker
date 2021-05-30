@@ -1,5 +1,6 @@
-package sk.kripix.backend.User;
+package sk.kripix.backend.user;
 
+import java.util.Collection;
 import java.util.Optional;
 
 public interface UserService {
@@ -8,4 +9,5 @@ public interface UserService {
     Optional<User> getUserByUsername(String username);
     User updateUser(User user);
     boolean existsByUsername(String username);
+    Collection<User> getTopPlayers();
 }
